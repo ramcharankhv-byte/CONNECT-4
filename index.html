@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -15,58 +15,148 @@
         Connect 4
       </div>
       <div class="points w-100 flex flex-row justify-between">
-        <div class="m-1 text-red-400 text-xl tracking wide">Red:0</div>
-        <div class="m-1 text-yellow-400 text-xl tracking wide">Yellow:0</div>
+        <div class="m-1 text-red-400 font-bold text-xl tracking wide">
+          Red:
+          <p id="redScoreDisp" class="inline text-black">0</p>
+        </div>
+        <div class="m-1 text-yellow-400 font-bold text-xl tracking wide">
+          Yellow:
+          <p id="yellowScoreDisp" class="inline text-black">0</p>
+        </div>
       </div>
       <div class="text-lg text-center">
-        <p class="inline text-red-500">Red's</p>
+        <p id="turnIndicator" class="inline text-red-500 font-bold">Red's</p>
         turn
       </div>
     </div>
     <div class="game-board flex justify-center min-h-[85vh] bg-blue-500">
       <div class="p-2 grid grid-cols-7 gap-2">
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
-        <div class="box rounded-full bg-white h-20 w-20"></div>
+        <button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button
+        ><button
+          class="box rounded-full bg-white h-20 w-20 hover:bg-gray-300 transition"
+        ></button>
       </div>
     </div>
     <div class="hidden bg-red-500 bg-yellow-500"></div>
