@@ -1,3 +1,20 @@
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function () {
+    const soundClone = this.sound.cloneNode();
+    soundClone.play();
+  };
+  this.stop = function () {
+    this.sound.pause();
+  };
+}
+playSound = new sound("gamePlay.mp3");
+winSound = new sound("gameWin.mp3");
 let boxes = document.querySelectorAll(".box");
 let turnR = true;
 let count = 0;
@@ -10,6 +27,12 @@ boxes.forEach((box) => {
   box.dataset.player = "null";
   console.log(box.dataset.player);
 });
+//reload logic
+let reload = document.getElementById("reload");
+reload.addEventListener("click", () => {
+  location.reload();
+});
+//winning patterns
 const winningCombinations = [
   // Horizontal
   [0, 1, 2, 3],
@@ -102,7 +125,12 @@ boxes.forEach((box, index) => {
       box.classList.remove("bg-white");
       box.dataset.player = "R";
       console.log(box.dataset.player);
-      box.style.backgroundColor = "red";
+      // box.style.backgroundColor = "red";
+      box.classList.add(
+        "bg-red-500",
+        "shadow-[inset_-4px_-4px_8px_rgba(0,0,0,0.35)]",
+        "animate-drop",
+      );
       turnIndicator.classList.remove("text-red-500");
       turnIndicator.classList.add("text-yellow-500");
       turnIndicator.innerText = "Yellow's";
@@ -110,14 +138,20 @@ boxes.forEach((box, index) => {
       box.classList.remove("bg-white");
       box.dataset.player = "Y";
       console.log(box.dataset.player);
-      box.style.backgroundColor = "yellow";
+      // box.style.backgroundColor = "yellow";
+      box.classList.add(
+        "bg-yellow-400",
+        "shadow-[inset_-4px_-4px_8px_rgba(0,0,0,0.35)]",
+        "animate-drop",
+      );
+
       turnIndicator.classList.remove("text-yellow-500");
       turnIndicator.classList.add("text-red-500");
       turnIndicator.innerText = "Red's";
     }
-
     box.classList.add("played");
     turnR = !turnR;
+    playSound.play();
     checkWinner();
     count++;
   });
@@ -142,9 +176,26 @@ const checkWinner = () => {
         console.log(`Winner is ${pos1}`);
         usedPattern.push(pattern);
 
+        let winnerBoxes = [
+          boxes[pattern[0]],
+          boxes[pattern[1]],
+          boxes[pattern[2]],
+          boxes[pattern[3]],
+        ];
         //updating score
-        if (pos1 === "R") redScore++;
-        else yellowScore++;
+        if (pos1 === "R") {
+          redScore++;
+          winnerBoxes.forEach((box) => {
+            box.classList.add("ring-4", "ring-red-500", "animate-pulse");
+          });
+        } else {
+          yellowScore++;
+          winnerBoxes.forEach((box) => {
+            box.classList.add("ring-4", "ring-yellow-300", "animate-pulse");
+          });
+        }
+        winSound.play();
+
         redScoreDisp.innerText = redScore;
         yellowScoreDisp.innerText = yellowScore;
 
